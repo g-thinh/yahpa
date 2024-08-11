@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import "./globals.css";
+import { Link } from "next-view-transitions";
 import {
   Accordion,
   AccordionContent,
@@ -13,6 +13,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center p-24">
       <div>Hello World</div>
       <ThemeDropdown />
+      <Link href="/about">Go to About</Link>
       <div className="flex gap-4">
         <Button>Press Me</Button>
         <Button variant="outline">Button</Button>
@@ -34,7 +35,8 @@ export default function Home() {
         <AccordionItem value="item-3">
           <AccordionTrigger>Is it animated?</AccordionTrigger>
           <AccordionContent>
-            Yes. It's animated by default, but you can disable it if you prefer.
+            Yes. It&apos;s animated by default, but you can disable it if you
+            prefer.
           </AccordionContent>
         </AccordionItem>
       </Accordion>

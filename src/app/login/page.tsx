@@ -10,11 +10,8 @@ export default function Login({
 }) {
   return (
     <div className="flex-1 flex flex-col w-full px-8 sm:max-w-md justify-center gap-2">
-      <Link
-        href="/"
-        className="py-2 px-4 rounded-md no-underline text-foreground bg-btn-background hover:bg-btn-background-hover flex items-center group text-sm"
-      >
-        <Button>
+      <Button asChild className="w-fit">
+        <Link href="/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -28,10 +25,10 @@ export default function Login({
             className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1"
           >
             <polyline points="15 18 9 12 15 6" />
-          </svg>{" "}
+          </svg>
           Back
-        </Button>
-      </Link>
+        </Link>
+      </Button>
 
       <form className="flex-1 flex flex-col w-full justify-center gap-2 text-foreground">
         <label className="text-md" htmlFor="email">

@@ -2,6 +2,9 @@ import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/components/header";
+import Footer from "@/components/footer";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,14 +21,20 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body className={inter.className}>
+      <body
+        className={cn([inter.className, "flex", "min-h-screen", "flex-col"])}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <Header />
+          <div className="flex flex-1">
+            <main className="flex-1">{children}</main>
+          </div>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

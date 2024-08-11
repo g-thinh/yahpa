@@ -1,7 +1,7 @@
-export default function Home() {
+export default function NotFound() {
   return (
     <section className="flex flex-col justify-center items-center">
-      <h1>Home Page</h1>
+      <h1>Page Not Found</h1>
     </section>
   );
 }

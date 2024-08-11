@@ -6,11 +6,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { ThemeDropdown } from "@/components/theme-dropdown";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center p-24">
       <div>Hello World</div>
+      <ThemeDropdown />
       <div className="flex gap-4">
         <Button>Press Me</Button>
         <Button variant="outline">Button</Button>

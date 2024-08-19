@@ -5,6 +5,7 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import Footer from "@/components/footer";
 import { cn } from "@/lib/utils";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,6 +31,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Toaster />
           <Header />
           <div className="flex flex-1">
             <main className="flex-1">{children}</main>

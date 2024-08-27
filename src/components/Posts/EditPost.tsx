@@ -1,12 +1,14 @@
 "use client";
 
-import { useEditor, EditorContent } from "@tiptap/react";
-import StarterKit from "@tiptap/starter-kit";
 import { Button } from "@/components/ui/button";
-import { Pencil } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
-import { ChangeEvent, useState } from "react";
+import { Tables } from "@/lib/supabase/database.types";
+import { DialogTitle } from "@radix-ui/react-dialog";
+import { Pencil } from "lucide-react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { ChangeEvent, useState } from "react";
+import { AspectRatio } from "../ui/aspect-ratio";
 import {
   Dialog,
   DialogContent,
@@ -14,15 +16,10 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTrigger,
-} from "./ui/dialog";
-import Image from "next/image";
-import { DialogTitle } from "@radix-ui/react-dialog";
-import EditorToolbar from "./EditorToolbar";
-import { Tables } from "@/lib/supabase/database.types";
-import { Label } from "./ui/label";
-import { Input } from "./ui/input";
-import { Textarea } from "./ui/textarea";
-import { AspectRatio } from "./ui/aspect-ratio";
+} from "../ui/dialog";
+import { Input } from "../ui/input";
+import { Label } from "../ui/label";
+import { Textarea } from "../ui/textarea";
 
 type EditPostProps = {
   post: Tables<"posts">;
@@ -47,7 +44,7 @@ export default function EditPost({ post }: EditPostProps) {
       .from("posts")
       .update({
         content,
-        updated_at: new Date().toString(),
+        updated_at: new Date().toDateString(),
         title,
       })
       .eq("id", post.id);
@@ -105,6 +102,7 @@ export default function EditPost({ post }: EditPostProps) {
     if (error) {
       setErrorMessage(error.message);
     }
+
     router.refresh();
     setOpen(false);
   };

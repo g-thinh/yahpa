@@ -1,6 +1,6 @@
 import Image from "next/image";
 import EditPost from "./EditPost";
-import { AspectRatio } from "./ui/aspect-ratio";
+import { AspectRatio } from "../ui/aspect-ratio";
 import { Badge } from "@/components/ui/badge";
 import { Tables } from "@/lib/supabase/database.types";
 

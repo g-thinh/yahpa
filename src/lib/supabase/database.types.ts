@@ -41,7 +41,9 @@ export type Database = {
           coverImage: string | null
           created_at: string
           id: number
+          images: string[] | null
           is_published: boolean | null
+          published_at: string | null
           title: string | null
           updated_at: string | null
         }
@@ -51,7 +53,9 @@ export type Database = {
           coverImage?: string | null
           created_at?: string
           id?: number
+          images?: string[] | null
           is_published?: boolean | null
+          published_at?: string | null
           title?: string | null
           updated_at?: string | null
         }
@@ -61,7 +65,9 @@ export type Database = {
           coverImage?: string | null
           created_at?: string
           id?: number
+          images?: string[] | null
           is_published?: boolean | null
+          published_at?: string | null
           title?: string | null
           updated_at?: string | null
         }

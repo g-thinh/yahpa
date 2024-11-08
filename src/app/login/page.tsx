@@ -9,8 +9,8 @@ export default function Login({
   searchParams: { message: string };
 }) {
   return (
-    <div className="flex-1 flex flex-col w-full px-8 sm:max-w-md justify-center gap-2">
-      <Button asChild className="w-fit">
+    <div className="flex-1 flex flex-col w-full px-8 justify-center items-center gap-2 ">
+      <Button asChild className="w-fit self-start">
         <Link href="/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +30,7 @@ export default function Login({
         </Link>
       </Button>
 
-      <form className="flex-1 flex flex-col w-full justify-center gap-2 text-foreground">
+      <form className="flex-1 flex flex-col w-full justify-center sm:max-w-sm gap-2 text-foreground">
         <label className="text-md" htmlFor="email">
           Email
         </label>

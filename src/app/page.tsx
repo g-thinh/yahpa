@@ -1,8 +1,9 @@
 import AddAssets from "@/components/Assets/AddAssets";
-import CreatePost from "@/components/Posts/CreatePost";
+import { CreatePostForm } from "@/components/Posts/CreatePostForm";
 import ManageAssets from "@/components/Assets/ManageAssets";
 import Posts from "@/components/Posts/Posts";
 import { createClient } from "@/lib/supabase/server";
+import CreatePostDialog from "@/components/Posts/CreatePostDialog";
 
 export default async function Home() {
   const supabase = createClient();
@@ -12,12 +13,16 @@ export default async function Home() {
     data: { user },
   } = await supabase.auth.getUser();
 
+  const isAdmin = Boolean(user);
+
   return (
     <section className="flex flex-col p-12 max-w-3xl mx-auto">
-      {!!user && <CreatePost />}
+      {isAdmin && <ManageAssets />}
+      <div className="flex flex-row items-center gap-4">
+        <h2 className="text-3xl font-bold my-4">Our Latest Posts</h2>
+        {isAdmin && <CreatePostDialog />}
+      </div>
 
-      {!!user && <ManageAssets />}
-      <h2 className="text-3xl font-bold my-4">Our Latest Posts</h2>
       <Posts />
     </section>
   );

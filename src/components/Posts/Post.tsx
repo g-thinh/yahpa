@@ -2,7 +2,7 @@ import Image from "next/image";
 import { AspectRatio } from "../ui/aspect-ratio";
 import { Badge } from "@/components/ui/badge";
 import { Tables } from "@/lib/supabase/database.types";
-import EditPostDialog from "./EditPostDialog";
+import { EditPostDialog } from "./EditPostDialog";
 
 type PostProps = {
   post: Tables<"posts">;

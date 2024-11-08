@@ -110,6 +110,8 @@ export function EditPostForm({
       if (onAfterDelete) {
         onAfterDelete();
       }
+
+      router.refresh();
     }
   }
   function handleFilePreview(e: ChangeEvent<HTMLInputElement>) {

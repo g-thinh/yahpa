@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { DialogTitle } from "@radix-ui/react-dialog";
-import { FilePlus2 } from "lucide-react";
+import { ImageUp } from "lucide-react";
 import { useState } from "react";
 import {
   Dialog,
@@ -11,26 +11,29 @@ import {
   DialogHeader,
   DialogTrigger,
 } from "../ui/dialog";
-import { CreatePostForm } from "./CreatePostForm";
+import { UploadAssetForm } from "./UploadAssetForm";
 
-export function CreatePostDialog() {
+export function UploadAssetDialog() {
   const [open, setOpen] = useState(false);
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button size="sm" variant="outline">
-          <FilePlus2 className="mr-2 h-4 w-4" /> Add Post
+          <ImageUp className="mr-2 h-4 w-4" /> Upload Image
         </Button>
       </DialogTrigger>
       <DialogContent className="">
         <DialogHeader>
-          <DialogTitle>Create Post</DialogTitle>
+          <DialogTitle>Upload Image or File</DialogTitle>
           <DialogDescription>
-            Start creating your new post. When you are done click Save.
+            Upload an image or a file to be stored in the cloud.
           </DialogDescription>
         </DialogHeader>
-        <CreatePostForm onAfterSubmit={() => setOpen(false)} />
+        <UploadAssetForm
+          onAfterSubmit={() => setOpen(false)}
+          onCancel={() => setOpen(false)}
+        />
       </DialogContent>
     </Dialog>
   );

@@ -18,7 +18,7 @@ type EditPostProps = {
   post: Tables<"posts">;
 };
 
-export default function EditPostDialog({ post }: EditPostProps) {
+export function EditPostDialog({ post }: EditPostProps) {
   const [open, setOpen] = useState(false);
 
   return (

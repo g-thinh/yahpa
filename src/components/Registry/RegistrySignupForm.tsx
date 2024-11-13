@@ -190,8 +190,22 @@ export function RegistrySignupForm() {
 
   async function onSubmit(values: FormValues) {
     console.log("registry form values", values);
+    const { error } = await supabase.auth.signInWithOtp({
+      email: values.email,
+      options: {
+        emailRedirectTo: `${origin}/auth/callback`,
+        data: {
+          first_name: values.first_name,
+          last_name: values.last_name,
+        },
+      },
+    });
+
     toast({
-      title: "Registration complete!",
+      variant: error ? "destructive" : "default",
+      title: error
+        ? "There was an error with your registration"
+        : "Registration complete!",
       description: new Date().toUTCString(),
     });
   }

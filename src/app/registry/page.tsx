@@ -22,8 +22,8 @@ export default function RegistryPage() {
           understands you!
         </p>
       </div>
-      <div className="flex flex-col items-center justify-center border-2 border-2 max-w-xl w-full p-6 my-2 rounded-md">
-        <h3 className="text-xl text-center mb-4">
+      <div className="flex flex-col items-center justify-center w-full max-w-xl p-6 my-2 border-2 rounded-md">
+        <h3 className="mb-4 text-xl text-center">
           Are you a healthcare professional?
         </h3>
         <p className="mb-10 ">

@@ -15,10 +15,10 @@ export default async function Home() {
   const isAdmin = Boolean(user);
 
   return (
-    <section className="flex flex-col p-12 max-w-3xl mx-auto">
+    <section className="flex flex-col max-w-3xl p-12 mx-auto">
       {isAdmin && <ManageAssets />}
       <div className="flex flex-row items-center gap-4">
-        <h2 className="text-3xl font-bold my-4">Our Latest Posts</h2>
+        <h2 className="my-4 text-3xl font-bold">Our Latest Posts</h2>
         {isAdmin && (
           <>
             <CreatePostDialog />

@@ -19,7 +19,10 @@ export default async function AuthButton() {
 
   return user ? (
     <div className="flex items-center gap-4">
-      Hey, {user.user_metadata.first_name}!
+      <Button asChild>
+        <Link href="/my-account">Account</Link>
+      </Button>
+
       <form action={signOut}>
         <Button variant="outline">Sign Out</Button>
       </form>

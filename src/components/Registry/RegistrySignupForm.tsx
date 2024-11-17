@@ -42,12 +42,6 @@ import { useToast } from "../ui/use-toast";
 
 type FormValues = z.infer<typeof formSchema>;
 
-const REASONS = [
-  "General Information",
-  "Contact Information",
-  "Sponsorship, partnership or collaboration",
-] as const;
-
 const STATUSES = ["Studying", "Seeking Employment", "Employed"] as const;
 const SECTORS = [
   { label: "Private", value: "private" },
